@@ -1,0 +1,45 @@
+	{
+	  "name": "encoding-sidebar",
+	  "displayName": "Encoding Sidebar",
+	  "description": "一个在侧边栏方便修改文件编码的插件",
+	  "version": "0.0.1",
+	  "engines": {
+	    "vscode": "^1.66.0"
+	  },
+	  "categories": [
+	    "Other"
+	  ],
+	  "activationEvents": [],
+	  "main": "./out/extension.js",
+	  "contributes": {
+	    "viewsContainers": {
+	      "activitybar": [
+	        {
+	          "id": "encoding-sidebar-container",
+	          "title": "文件编码",
+	          "icon": "resources/icon.svg"
+	        }
+	      ]
+	    },
+	    "views": {
+	      "encoding-sidebar-container": [
+	        {
+	          "type": "webview",
+	          "id": "encoding-sidebar.view",
+	          "name": "修改编码"
+	        }
+	      ]
+	    }
+	  },
+	  "scripts": {
+	    "vscode:prepublish": "npm run compile",
+	    "compile": "tsc -p ./",
+	    "watch": "tsc -watch -p ./",
+	    "pretest": "npm run compile && npm run lint"
+	  },
+	  "devDependencies": {
+	    "@types/vscode": "^1.66.0",
+	    "@types/node": "16.x",
+	    "typescript": "^4.9.4"
+	  }
+	}
